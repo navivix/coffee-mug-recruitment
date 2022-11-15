@@ -13,6 +13,7 @@ export class Product {
   @Column({ length: 100 })
   name: string;
 
+  // Price in pennies, for precision
   @Column()
   price: number;
 
