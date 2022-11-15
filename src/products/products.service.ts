@@ -12,7 +12,7 @@ export class ProductsService {
     private readonly productsRepository: Repository<Product>,
   ) {}
 
-  create(createProductDto: CreateProductDto): Promise<Product> {
+  create(createProductDto: CreateProductDto) {
     const product = new Product();
     product.name = createProductDto.name;
     product.price = createProductDto.price;
