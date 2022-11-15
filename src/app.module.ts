@@ -16,7 +16,7 @@ import { ProductsModule } from './products/products.module';
         password: configService.get('DB_PASSWORD') || '',
         database: configService.get('DB_NAME') || 'test',
         autoLoadEntities: true,
-        synchronize: configService.get('NODE_ENV') !== 'production',
+        synchronize: true,
       }),
       inject: [ConfigService],
     }),
