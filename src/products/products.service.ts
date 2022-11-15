@@ -29,10 +29,10 @@ export class ProductsService {
   }
 
   update(id: number, updateProductDto: UpdateProductDto) {
-    return this.productsRepository.update({ id }, updateProductDto);
+    return this.productsRepository.update(id, updateProductDto);
   }
 
   remove(id: number) {
-    return this.productsRepository.delete({ id });
+    return this.productsRepository.delete(id);
   }
 }
