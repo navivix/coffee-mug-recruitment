@@ -29,7 +29,7 @@ export class ProductsService {
   }
 
   update(id: number, updateProductDto: UpdateProductDto) {
-    return `This action updates a #${id} product`;
+    return this.productsRepository.update({ id }, updateProductDto);
   }
 
   remove(id: number) {
