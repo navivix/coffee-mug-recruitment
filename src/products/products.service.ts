@@ -12,8 +12,12 @@ export class ProductsService {
     private readonly productsRepository: Repository<Product>,
   ) {}
 
-  create(createProductDto: CreateProductDto) {
-    return 'This action adds a new product';
+  create(createProductDto: CreateProductDto): Promise<Product> {
+    const product = new Product();
+    product.name = createProductDto.name;
+    product.price = createProductDto.price;
+
+    return this.productsRepository.save(product);
   }
 
   findAll() {
