@@ -14,7 +14,7 @@ import { ProductsModule } from './products/products.module';
         port: parseInt(configService.get('DB_PORT')) || 3306,
         username: configService.get('DB_USERNAME') || 'root',
         password: configService.get('DB_PASSWORD') || '',
-        database: configService.get('DB_NAME') || 'test',
+        database: configService.get('DB_NAME') || 'db',
         autoLoadEntities: true,
         synchronize: true,
       }),
