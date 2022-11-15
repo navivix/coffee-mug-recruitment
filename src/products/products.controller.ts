@@ -7,12 +7,15 @@ import {
   Delete,
   ParseIntPipe,
   Put,
+  UseInterceptors,
 } from '@nestjs/common';
 import { ProductsService } from './products.service';
 import { CreateProductDto } from './dto/create-product.dto';
 import { UpdateProductDto } from './dto/update-product.dto';
+import { TypeOrmNotFoundInterceptor } from 'src/common/interceptors/typeorm-not-found.interceptor';
 
 @Controller('products')
+@UseInterceptors(TypeOrmNotFoundInterceptor)
 export class ProductsController {
   constructor(private readonly productsService: ProductsService) {}
 
@@ -27,7 +30,9 @@ export class ProductsController {
   }
 
   @Get(':id')
-  findOne(@Param('id', ParseIntPipe) id: number) {
+  async findOne(@Param('id', ParseIntPipe) id: number) {
+    const product = await this.productsService.findOne(id);
+    console.log(product);
     return this.productsService.findOne(id);
   }
 
