@@ -7,7 +7,7 @@ This repository is a solution to Coffee Mug recruitment task
 ## Installation
 
 ```bash
-$ npm install
+$ yarn install
 ```
 
 ## Configuration
@@ -29,13 +29,13 @@ The app works out of the box when started with compose. Otherwise configure with
 
 ```bash
 # development
-$ npm run start
+$ yarn start
 
 # watch mode
-$ npm run start:dev
+$ yarn start:dev
 
 # production mode
-$ npm run start:prod
+$ yarn start:prod
 # or
 $ docker compose up
 ```
